@@ -1,0 +1,43 @@
+.goal-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.goal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.goal-name {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #333;
+}
+
+.goal-emoji {
+  font-size: 1.5em; /* Tamaño del emoji */
+}
+
+.goal-progress-text {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.progress-bar-container {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #4CAF50; /* Color de progreso verde */
+  border-radius: 5px;
+}

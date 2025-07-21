@@ -1,0 +1,18 @@
+.smart-insight-card {
+  background-color: #e0f2f7; /* Un azul claro */
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.smart-insight-title {
+  font-weight: bold;
+  color: #2196f3; /* Un azul más oscuro */
+  margin-bottom: 5px;
+}
+
+.smart-insight-message {
+  color: #333;
+  line-height: 1.4;
+  margin: 0;
+}
