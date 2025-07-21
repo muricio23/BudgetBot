@@ -1,10 +1,13 @@
 import React from 'react';
-import './SmartInsight.css'; // Estilos para el Smart Insight
+import './SmartInsight.css';
 
-function SmartInsight({ message }) {
+// El componente ahora acepta una prop 'botIcon'
+function SmartInsight({ message, botIcon }) {
   return (
     <div className="smart-insight-card">
-      <div className="smart-insight-title">Smart Insight</div>
+      {botIcon && ( // Solo renderiza la imagen si la prop botIcon existe
+        <img src={botIcon} alt="Bot Icon" className="smart-insight-icon" />
+      )}
       <p className="smart-insight-message">{message}</p>
     </div>
   );

@@ -20,20 +20,22 @@ function Profile() {
       ) : (
         <div className="auth-forms-wrapper">
           {showLogin ? (
+            // Asegúrate de que LoginForm no tenga su propio mensaje de alternancia
             <LoginForm />
           ) : (
-            <RegisterForm onToggleLogin={toggleForm} />
+            // Asegúrate de que RegisterForm no tenga su propio mensaje de alternancia
+            <RegisterForm />
           )}
-          {!showLogin && (
-            <p className="toggle-form-prompt">
-              ¿Ya tienes una cuenta? <span onClick={toggleForm}>Iniciar Sesión</span>
-            </p>
-          )}
-          {showLogin && (
-            <p className="toggle-form-prompt">
-              ¿No tienes una cuenta? <span onClick={toggleForm}>Regístrate aquí</span>
-            </p>
-          )}
+
+          {/* --- MENSAJE DE ALTERNANCIA CENTRALIZADO AQUÍ --- */}
+          <p className="toggle-form-prompt">
+            {showLogin ? (
+              <>¿No tienes una cuenta? <span onClick={toggleForm}>Regístrate aquí</span></>
+            ) : (
+              <>¿Ya tienes una cuenta? <span onClick={toggleForm}>Iniciar Sesión</span></>
+            )}
+          </p>
+          {/* ----------------------------------------------- */}
         </div>
       )}
     </div>

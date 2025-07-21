@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import './UserProfile.css'; // Estilos para el perfil
-import defaultProfileImage from '../../assets/1a2b3.jpg'; // <--- IMPORTA TU IMAGEN JPG AQUÍ
+import defaultProfileImage from '../../assets/perfil.png'; // <--- ¡IMPORTA TU IMAGEN DE PERFIL AQUÍ!
 
 function UserProfile() {
   const { user, logout, updateProfile } = useAuth();
@@ -20,7 +20,7 @@ function UserProfile() {
       <h2>Mi Perfil</h2>
       <div className="profile-card">
         <div className="avatar-section">
-          {/* Usa tu imagen importada como default */}
+          {/* Usa tu imagen importada como default si user.avatar no está disponible */}
           <img
             src={user?.avatar || defaultProfileImage} // <--- CAMBIO CLAVE AQUÍ
             alt="User Avatar"

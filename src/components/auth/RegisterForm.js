@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
-import './AuthForm.css';
+import './AuthForm.css'; // Assuming this CSS file styles your auth forms
 
-function RegisterForm({ onToggleLogin }) {
+function RegisterForm() { // onToggleLogin ya no es necesario si el mensaje se maneja externamente
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [acceptedTerms, setAcceptedTerms] = useState(false); // State for terms
   const [error, setError] = useState('');
   const { register } = useAuth();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
-    // Validaciones básicas
+
     if (!name || !email || !password) {
       setError('Todos los campos son obligatorios.');
       return;
@@ -21,10 +22,14 @@ function RegisterForm({ onToggleLogin }) {
       setError('La contraseña debe tener al menos 6 caracteres.');
       return;
     }
+    if (!acceptedTerms) {
+      setError('Debes aceptar los Términos y Condiciones para registrarte.');
+      return;
+    }
 
     const success = register(name, email, password);
     if (!success) {
-      setError('Error al registrar. Inténtalo de nuevo.'); // Simulación, en real sería un mensaje de backend
+      setError('Error al registrar. Inténtalo de nuevo.');
     }
   };
 
@@ -62,12 +67,26 @@ function RegisterForm({ onToggleLogin }) {
             required
           />
         </div>
+
+        <div className="terms-checkbox-group">
+          <input
+            type="checkbox"
+            id="acceptTerms"
+            checked={acceptedTerms}
+            onChange={(e) => setAcceptedTerms(e.target.checked)}
+          />
+          <label htmlFor="acceptTerms">
+            Acepto los <a href="/terms" target="_blank" rel="noopener noreferrer">Términos y Condiciones</a> y la <a href="/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidad</a>.
+          </label>
+        </div>
+
         {error && <p className="error-message">{error}</p>}
         <button type="submit" className="auth-button">Registrarse</button>
       </form>
-      <p className="toggle-auth">
+      {/* --- ELIMINA ESTE PÁRRAFO DE AQUÍ --- */}
+      {/* <p className="toggle-auth">
         ¿Ya tienes una cuenta? <span onClick={onToggleLogin}>Iniciar Sesión</span>
-      </p>
+      </p> */}
     </div>
   );
 }

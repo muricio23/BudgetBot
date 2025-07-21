@@ -83,3 +83,54 @@
 .toggle-auth span:hover {
   text-decoration: underline;
 }
+
+.terms-checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 0.9em;
+  color: #555;
+  justify-content: center; /* Center the checkbox group within the form */
+  text-align: left; /* Ensure text within label aligns left */
+}
+
+.terms-checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  min-width: 18px; /* Ensure it doesn't shrink in flexbox */
+  min-height: 18px;
+  cursor: pointer;
+  accent-color: #007bff; /* Highlight color for the checkbox */
+}
+
+.terms-checkbox-group label {
+  display: flex; /* Use flex to align text with the checkbox */
+  align-items: center; /* Vertically center content */
+  margin-bottom: 0; /* Remove default bottom margin for label */
+  flex-wrap: wrap; /* Allow text to wrap if it's long */
+}
+
+.terms-checkbox-group a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-right: 5px;
+  white-space: nowrap; /* Prevent breaking terms/privacy links */
+}
+
+.terms-checkbox-group a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #dc3545; /* Red for error messages */
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}

@@ -6,7 +6,8 @@ import { useGoals } from '../context/GoalsContext';
 import { useAuth } from '../context/AuthContext';
 import { useTransactions } from '../context/TransactionsContext';
 import './Home.css';
-import defaultAvatar from '../assets/1a2b3.jpg'; // <--- IMPORTA TU LOGO AQUÍ COMO AVATAR PREDETERMINADO (AJUSTA LA RUTA)
+import defaultAvatar from '../assets/perfil.png'; // <--- IMPORTA TU LOGO AQUÍ COMO AVATAR PREDETERMINADO (AJUSTA LA RUTA)
+import botImage from '../assets/bot.png'; // <--- IMPORTA LA IMAGEN DEL BOT AQUÍ (AJUSTA LA RUTA) 
 
 function Home() {
   const { goals } = useGoals();
@@ -130,7 +131,7 @@ function Home() {
         )}
       </div>
 
-      <SmartInsight message={smartInsightMessage} />
+      <SmartInsight message={smartInsightMessage} botIcon={botImage} />
     </div>
   );
 }

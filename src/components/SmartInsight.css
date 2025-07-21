@@ -1,3 +1,32 @@
+V.smart-insight-card {
+  background-color: #e0f7fa; /* Un color de fondo suave para la tarjeta */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  display: flex; /* Para alinear el icono y el mensaje */
+  align-items: center; /* Centrar verticalmente */
+  gap: 15px; /* Espacio entre el icono y el mensaje */
+  margin-top: 30px; /* Espacio superior */
+  border-left: 5px solid #00bcd4; /* Un toque de color en el borde */
+}
+
+.smart-insight-icon {
+  width: 50px; /* Tamaño del icono del bot */
+  height: 50px;
+  object-fit: contain; /* Asegura que la imagen completa se vea sin recortar */
+  border-radius: 50%; /* Si quieres que el icono sea circular */
+  background-color: #fff; /* Fondo blanco si el bot tiene fondo transparente */
+  padding: 5px; /* Pequeño padding alrededor del bot si es necesario */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.smart-insight-message {
+  font-size: 1.1em;
+  color: #333;
+  margin: 0; /* Elimina el margen predeterminado del párrafo */
+  flex-grow: 1; /* Permite que el mensaje ocupe el espacio restante */
+  line-height: 1.4;
+}
 .smart-insight-card {
   background-color: #e0f2f7; /* Un azul claro */
   padding: 20px;
